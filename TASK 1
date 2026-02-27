@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+class library
+{
+protected:
+	
+	string title;
+	string author;
+	int id; 	 	 
+};
+class book:public library
+{
+protected:
+	
+	int pages;
+	string genre;	
+};
+class magzine:public book
+{
+protected:
+	
+	int issuenumber;
+	int monthofpublication;	
+};
+class audiobook:public magzine
+{
+protected:
+	
+	int duration;
+	string narratorname;
+	
+public:
+	
+	  void getdata()
+     {
+     	cout<<"\n Enter book title : ";
+     	cin>>title;
+     	cout<<"\n Enter author name :";
+     	cin>>author;
+     	cout<<"\n Enter id :";
+     	cin>>id;
+     	cout<<"\n Enter pages : ";
+	    cin>>pages;
+	    cout<<"\n Write genre : ";
+	    cin>>genre;
+	    cout<<"\n Enter issue number : ";
+	    cin>>issuenumber;
+      	cout<<"\n Enter month off publication : ";
+	    cin>>monthofpublication;
+	    cout<<"\n Enter duration : ";
+	    cin>>duration;
+	    cout<<"\n Enter narator name : ";
+	    cin>>narratorname;
+     }
+	
+	void displayinfo()
+	{
+		cout<<"\n TITLE OF BOOK : "<<title;
+		cout<<"\n AUTHOR : "<<author;
+		cout<<"\n ID NUMBER : "<<id;
+		cout<<"\n NUMBER OF PAGES IN A BOOK : "<<pages;
+		cout<<"\n GENRE : "<<genre;
+		cout<<"\n ISSUE NUMBER : "<<issuenumber;
+		cout<<"\n MONTH OF PUBLICATION : "<<monthofpublication;
+		cout<<"\n DURATION : "<<duration;
+		cout<<"\n NARRATOR NAME : "<<narratorname;
+	}
+	
+};
+int main()
+{
+	audiobook obj1,obj2;
+	obj1.getdata();
+	obj1.displayinfo();
+	
+	cout<<"\n                                                 ------------";
+	
+	obj2.getdata();
+	obj2.displayinfo();
+}
