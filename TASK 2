@@ -1,0 +1,41 @@
+#include<isotream>
+using namespace std;
+
+class delivery
+{
+	protected:
+		int id;
+		double cost;
+		string name;
+	public:
+	     void displayinfo(int id,double cost,string name)
+		  {
+		  	cout<<"Delivery information : "<<endl;
+		  	cout<<"ID : "<<id<<endl;
+		  	cout<<"Cost : "<<cost<<endl;
+		  	cout<<"Customer : "<<name<<endl;
+		  }	
+};
+class expressdelivery : public delivery
+{
+	public:
+		 string prioritylevel;
+	public:	
+	      using delivery::displayinfo;
+	      
+	void displayinfo(int id,double cost,string name,string pl)
+	{
+		cout<<"Express delivery Information : "<<endl;
+		cout<<"ID : "<<id<<endl;
+		cout<<"Cost : "<<cost<<endl;
+		cout<<"Customer : "<<name<<endl;
+		
+	 }      
+		 
+};
+int main()
+{
+	expressdelivery e1;
+	e1.displayinfo(101,850.5,"ALI");
+	e1.displayinfo(202,1500.75,"SANA","High");
+}
